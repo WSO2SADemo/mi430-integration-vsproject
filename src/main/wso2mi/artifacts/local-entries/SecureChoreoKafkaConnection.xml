@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="SecureChoreoKafkaConnection" xmlns="http://ws.apache.org/ns/synapse">
+  <kafkaTransport.init>
+    <connectionType>KAFKASECURE</connectionType>
+    <bootstrapServers>{wso2:vault-lookup('bootstrap_servers')}</bootstrapServers>
+    <keySerializerClass>org.apache.kafka.common.serialization.StringSerializer</keySerializerClass>
+    <valueSerializerClass>org.apache.kafka.common.serialization.StringSerializer</valueSerializerClass>
+    <sslKeyPassword>{wso2:vault-lookup('ssl_key_password')}</sslKeyPassword>
+    <sslKeystoreLocation>/wso2mi/certs/wso2carbon.jks</sslKeystoreLocation>
+    <sslKeystorePassword>{wso2:vault-lookup('ssl_key_store_password')}</sslKeystorePassword>
+    <sslTruststoreLocation>/wso2mi/certs/client-truststore.jks</sslTruststoreLocation>
+    <sslTruststorePassword>{wso2:vault-lookup('trust_store_password')}</sslTruststorePassword>
+    <securityProtocol>SSL</securityProtocol>
+    <name>SecureChoreoKafkaConnection</name>
+  </kafkaTransport.init>
+</localEntry>
