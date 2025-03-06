@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<endpoint name="GetItemByItemId" xmlns="http://ws.apache.org/ns/synapse">
-    <http method="get" uri-template="${$SYSTEM:BACKEND_BAL_SERVICE_URL}/item?itemId={uri.var.itemId}">
+<endpoint name="GetTest" xmlns="http://ws.apache.org/ns/synapse">
+    <http method="get" uri-template="${$SYSTEM:BACKEND_BAL_SERVICE_URL}/test">
         <suspendOnFailure>
             <initialDuration>-1</initialDuration>
             <progressionFactor>1</progressionFactor>

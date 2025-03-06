@@ -25,10 +25,4 @@
             <respond/>
         </on-fail>
     </validate>
-    <send>
-        <endpoint>
-            <http method="post" uri-template="http://localhost:9091/ecom/rest/addPurchase"/>
-        </endpoint>
-    </send>
-    <respond/>
 </sequence>

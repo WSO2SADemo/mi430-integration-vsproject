@@ -10,7 +10,36 @@
     </resource>
     <resource methods="POST" uri-template="/add_purchase">
         <inSequence>
-        <respond /></inSequence>
+            <sequence key="schema_validation_seq"/>
+            <send>
+                <endpoint>
+                    <http method="post" uri-template="${$SYSTEM:BACKEND_BAL_SERVICE_URL}/addPurchase"/>
+                </endpoint>
+            </send>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/test">
+        <inSequence>
+            <payloadFactory media-type="json" template-type="default">
+                <format>{"Test":"Success"}</format>
+                <args>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/test-be">
+        <inSequence>
+            <call>
+                <endpoint key="GetTest"/>
+            </call>
+            <respond/>
+        </inSequence>
         <faultSequence>
         </faultSequence>
     </resource>

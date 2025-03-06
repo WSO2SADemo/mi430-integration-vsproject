@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="service_chain_to_get_item_info_seq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-    <log category="INFO" logMessageID="false" logFullPayload="true">
-        <message></message>
-    </log>
     <property name="REST_URL_POSTFIX" scope="axis2" action="remove"/>
     <property name="uri.var.itemId" scope="default" type="STRING" expression="$url:itemId"/>
     <property expression="json-eval($.ItemsOrdered)" name="ItemsOrdered" scope="default" type="STRING"/>
