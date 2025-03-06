@@ -26,7 +26,7 @@ paths:
       responses:
         default:
           description: Default response
-  /add_purchase:
+  /validate_and_add_purchase:
     post:
       requestBody:
         description: Sample Payload
