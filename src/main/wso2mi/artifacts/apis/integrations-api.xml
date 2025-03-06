@@ -8,9 +8,32 @@
         <faultSequence>
         </faultSequence>
     </resource>
-    <resource methods="POST" uri-template="/validate_and_add_purchase">
+    <resource methods="POST" uri-template="/validate_iterate_add_purchase_to_kafka">
         <inSequence>
             <sequence key="schema_validation_seq"/>
+            <foreach expression="json-eval($.orders)" id="eachOrder" sequence="service_chain_to_get_item_info_seq"/>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/test">
+        <inSequence>
+            <payloadFactory media-type="json" template-type="default">
+                <format>{"test":"success"}</format>
+                <args>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/test-be">
+        <inSequence>
+            <call>
+                <endpoint key="GetTest"/>
+            </call>
             <respond/>
         </inSequence>
         <faultSequence>

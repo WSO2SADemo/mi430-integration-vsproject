@@ -26,7 +26,7 @@ paths:
       responses:
         default:
           description: Default response
-  /validate_and_add_purchase:
+  /validate_iterate_add_purchase_to_kafka:
     post:
       requestBody:
         description: Sample Payload
@@ -43,6 +43,16 @@ paths:
               xml:
                 name: payload
         required: false
+      responses:
+        default:
+          description: Default response
+  /test:
+    get:
+      responses:
+        default:
+          description: Default response
+  /test-be:
+    get:
       responses:
         default:
           description: Default response
