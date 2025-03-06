@@ -6,10 +6,10 @@
     <keySerializerClass>org.apache.kafka.common.serialization.StringSerializer</keySerializerClass>
     <valueSerializerClass>org.apache.kafka.common.serialization.StringSerializer</valueSerializerClass>
     <sslKeyPassword>$SYSTEM:KEY_PASS</sslKeyPassword>
-    <sslKeystoreLocation>/wso2mi/certs/wso2carbon.jks</sslKeystoreLocation>
-    <sslKeystorePassword>$SYSTEM:KEY_STORE_PATH</sslKeystorePassword>
-    <sslTruststoreLocation>/wso2mi/certs/client-truststore.jks</sslTruststoreLocation>
-    <sslTruststorePassword>$SYSTEM:TRUST_STORE_PATH</sslTruststorePassword>
+    <sslKeystoreLocation>$SYSTEM:KEY_STORE_PATH</sslKeystoreLocation>
+    <sslKeystorePassword>$SYSTEM:KEY_STORE_PASS</sslKeystorePassword>
+    <sslTruststoreLocation>$SYSTEM:TRUST_STORE_PATH</sslTruststoreLocation>
+    <sslTruststorePassword>$SYSTEM:TRUST_STORE_PASS</sslTruststorePassword>
     <securityProtocol>SSL</securityProtocol>
     <name>SecureChoreoKafkaConnection</name>
   </kafkaTransport.init>
