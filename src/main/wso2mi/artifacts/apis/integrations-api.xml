@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<api context="/integration-api" name="integration-api" xmlns="http://ws.apache.org/ns/synapse">
-    <resource methods="POST" uri-template="/enhance_and_add_to_purchased_q">
+<api context="/integrations-api" name="integrations-api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/enhance_and_add_to_purchase_q">
         <inSequence>
             <sequence key="service_chain_to_get_item_info_seq"/>
-            <respond description="200 OK Response"/>
+            <respond/>
         </inSequence>
         <faultSequence>
         </faultSequence>
@@ -11,11 +11,6 @@
     <resource methods="POST" uri-template="/validate_and_add_purchase">
         <inSequence>
             <sequence key="schema_validation_seq"/>
-            <send>
-                <endpoint>
-                    <http method="post" uri-template="${$SYSTEM:BACKEND_BAL_SERVICE_URL}/addPurchase"/>
-                </endpoint>
-            </send>
             <respond/>
         </inSequence>
         <faultSequence>
