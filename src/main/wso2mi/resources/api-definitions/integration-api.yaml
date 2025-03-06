@@ -46,18 +46,3 @@ paths:
       responses:
         default:
           description: Default response
-  /test:
-    get:
-      responses:
-        default:
-          description: Default response
-  /test_be:
-    get:
-      responses:
-        default:
-          description: Default response
-  /to_be_deleted:
-    get:
-      responses:
-        default:
-          description: Default response

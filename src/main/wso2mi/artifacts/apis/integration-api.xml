@@ -21,32 +21,4 @@
         <faultSequence>
         </faultSequence>
     </resource>
-    <resource methods="GET" uri-template="/test">
-        <inSequence>
-            <payloadFactory media-type="json" template-type="default">
-                <format>{"Test":"Success"}</format>
-                <args>
-                </args>
-            </payloadFactory>
-            <respond/>
-        </inSequence>
-        <faultSequence>
-        </faultSequence>
-    </resource>
-    <resource methods="GET" uri-template="/test_be">
-        <inSequence>
-            <call>
-                <endpoint key="GetTest"/>
-            </call>
-            <respond/>
-        </inSequence>
-        <faultSequence>
-        </faultSequence>
-    </resource>
-    <resource methods="GET" uri-template="/to_be_deleted">
-        <inSequence>
-        </inSequence>
-        <faultSequence>
-        </faultSequence>
-    </resource>
 </api>
