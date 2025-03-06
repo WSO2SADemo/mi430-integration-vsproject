@@ -2,14 +2,14 @@
 <localEntry key="SecureChoreoKafkaConnection" xmlns="http://ws.apache.org/ns/synapse">
   <kafkaTransport.init>
     <connectionType>KAFKASECURE</connectionType>
-    <bootstrapServers>{wso2:vault-lookup('bootstrap_servers')}</bootstrapServers>
+    <bootstrapServers>kafka-b48cc93e-fa33-4420-a155-bc653b4d46be-kafkase797225236-cho.h.aivencloud.com:24903</bootstrapServers>
     <keySerializerClass>org.apache.kafka.common.serialization.StringSerializer</keySerializerClass>
     <valueSerializerClass>org.apache.kafka.common.serialization.StringSerializer</valueSerializerClass>
-    <sslKeyPassword>{wso2:vault-lookup('ssl_key_password')}</sslKeyPassword>
-    <sslKeystoreLocation>/wso2mi/certs/wso2carbon.jks</sslKeystoreLocation>
-    <sslKeystorePassword>{wso2:vault-lookup('ssl_key_store_password')}</sslKeystorePassword>
-    <sslTruststoreLocation>/wso2mi/certs/client-truststore.jks</sslTruststoreLocation>
-    <sslTruststorePassword>{wso2:vault-lookup('trust_store_password')}</sslTruststorePassword>
+    <sslKeyPassword>wso2carbon</sslKeyPassword>
+    <sslKeystoreLocation>/Users/ramindu/wso2/mi/kafka/wso2carbon.jks</sslKeystoreLocation>
+    <sslKeystorePassword>wso2carbon</sslKeystorePassword>
+    <sslTruststoreLocation>/Users/ramindu/wso2/mi/kafka/client-truststore.jks</sslTruststoreLocation>
+    <sslTruststorePassword>wso2carbon</sslTruststorePassword>
     <securityProtocol>SSL</securityProtocol>
     <name>SecureChoreoKafkaConnection</name>
   </kafkaTransport.init>
