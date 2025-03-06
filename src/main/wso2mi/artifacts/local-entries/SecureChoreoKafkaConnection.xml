@@ -2,7 +2,7 @@
 <localEntry key="SecureChoreoKafkaConnection" xmlns="http://ws.apache.org/ns/synapse">
   <kafkaTransport.init>
     <connectionType>KAFKASECURE</connectionType>
-    <bootstrapServers>{wso2:vault-lookup('bootstrap_servers')}</bootstrapServers>
+    <bootstrapServers>$SYSTEM:KAFKA_ENDPOINT</bootstrapServers>
     <keySerializerClass>org.apache.kafka.common.serialization.StringSerializer</keySerializerClass>
     <valueSerializerClass>org.apache.kafka.common.serialization.StringSerializer</valueSerializerClass>
     <sslKeyPassword>$SYSTEM:KEY_PASS</sslKeyPassword>
