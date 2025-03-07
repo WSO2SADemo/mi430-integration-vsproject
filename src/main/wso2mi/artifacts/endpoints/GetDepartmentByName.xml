@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint name="GetDepartmentByName" xmlns="http://ws.apache.org/ns/synapse">
-    <http method="get" uri-template="$env{BACKEND_BAL_SERVICE_URL}/department?departmentName={uri.var.departmentName}">
+    <http method="get" uri-template="$SYSTEM:BACKEND_BAL_SERVICE_URL/department?departmentName={uri.var.departmentName}">
         <suspendOnFailure>
             <initialDuration>-1</initialDuration>
             <progressionFactor>1</progressionFactor>
