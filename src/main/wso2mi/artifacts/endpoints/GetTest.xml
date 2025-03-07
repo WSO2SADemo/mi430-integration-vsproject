@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint name="GetTest" xmlns="http://ws.apache.org/ns/synapse">
-    <http method="get" uri-template="$SYSTEM:BACKEND_BAL_SERVICE_URL/test ">
+    <http method="get" uri-template="$SYSTEM:BACKEND_BAL_SERVICE_URL_TEST">
         <suspendOnFailure>
             <initialDuration>-1</initialDuration>
             <progressionFactor>1</progressionFactor>
