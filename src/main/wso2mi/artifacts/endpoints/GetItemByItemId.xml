@@ -8,5 +8,15 @@
         <markForSuspension>
             <retriesBeforeSuspension>0</retriesBeforeSuspension>
         </markForSuspension>
+        <authentication>
+            <oauth>
+                <clientCredentials>
+                    <clientId>$SYSTEM:CHOREO_CONNECTIONTOBACKEND_CONSUMERKEY</clientId>
+                    <clientSecret>$SYSTEM:CHOREO_CONNECTIONTOBACKEND_CONSUMERSECRET</clientSecret>
+                    <tokenUrl>$SYSTEM:CHOREO_CONNECTIONTOBACKEND_CONSUMERKEY</tokenUrl>
+                    <authMode></authMode>
+                </clientCredentials>
+            </oauth>
+        </authentication>
     </http>
 </endpoint>
