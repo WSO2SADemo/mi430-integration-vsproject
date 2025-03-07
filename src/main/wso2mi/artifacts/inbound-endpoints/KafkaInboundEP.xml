@@ -4,7 +4,7 @@
         <parameter name="interval">10</parameter>
         <parameter name="sequential">true</parameter>
         <parameter name="coordination">true</parameter>
-        <parameter name="bootstrap.servers">$SYSTEM:KAFKA_ENDPOINT</parameter>
+        <parameter name="bootstrap.servers">$env{KAFKA_ENDPOINT}</parameter>
         <parameter name="topic.name">tous-delivery</parameter>
         <parameter name="group.id">group1</parameter>
         <parameter name="contentType">application/json</parameter>
@@ -27,11 +27,11 @@
         <parameter name="retry.backoff.ms">100</parameter>
         <parameter name="connections.max.idle.ms">540000</parameter>
         <parameter name="security.protocol">SSL</parameter>
-        <parameter name="ssl.keystore.location">$SYSTEM:KEY_STORE_PATH</parameter>
-        <parameter name="ssl.keystore.password">$SYSTEM:KEY_STORE_PASS</parameter>
-        <parameter name="ssl.key.password">$SYSTEM:KEY_PASS</parameter>
-        <parameter name="ssl.truststore.location">$SYSTEM:TRUST_STORE_PATH</parameter>
-        <parameter name="ssl.truststore.password">$SYSTEM:TRUST_STORE_PATH</parameter>
+        <parameter name="ssl.keystore.location">$env{KEY_STORE_PATH}</parameter>
+        <parameter name="ssl.keystore.password">$env{KEY_STORE_PASS}</parameter>
+        <parameter name="ssl.key.password">$env{KEY_PASS}</parameter>
+        <parameter name="ssl.truststore.location">$env{TRUST_STORE_PATH}</parameter>
+        <parameter name="ssl.truststore.password">$env{TRUST_STORE_PATH}</parameter>
         <parameter name="metrics.num.samples">2</parameter>
         <parameter name="metrics.recording.level">INFO</parameter>
         <parameter name="metrics.sample.window.ms">30000</parameter>

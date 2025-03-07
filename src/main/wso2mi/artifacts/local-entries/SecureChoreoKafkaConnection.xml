@@ -2,14 +2,14 @@
 <localEntry key="SecureChoreoKafkaConnection" xmlns="http://ws.apache.org/ns/synapse">
   <kafkaTransport.init>
     <connectionType>KAFKASECURE</connectionType>
-    <bootstrapServers>$SYSTEM:KAFKA_ENDPOINT</bootstrapServers>
+    <bootstrapServers>$env{KAFKA_ENDPOINT}</bootstrapServers>
     <keySerializerClass>org.apache.kafka.common.serialization.StringSerializer</keySerializerClass>
     <valueSerializerClass>org.apache.kafka.common.serialization.StringSerializer</valueSerializerClass>
-    <sslKeyPassword>$SYSTEM:KEY_PASS</sslKeyPassword>
-    <sslKeystoreLocation>$SYSTEM:KEY_STORE_PATH</sslKeystoreLocation>
-    <sslKeystorePassword>$SYSTEM:KEY_STORE_PASS</sslKeystorePassword>
-    <sslTruststoreLocation>$SYSTEM:TRUST_STORE_PATH</sslTruststoreLocation>
-    <sslTruststorePassword>$SYSTEM:TRUST_STORE_PASS</sslTruststorePassword>
+    <sslKeyPassword>$env{KEY_PASS}</sslKeyPassword>
+    <sslKeystoreLocation>$env{KEY_STORE_PATH}</sslKeystoreLocation>
+    <sslKeystorePassword>$env{KEY_STORE_PASS}</sslKeystorePassword>
+    <sslTruststoreLocation>$env{TRUST_STORE_PATH}</sslTruststoreLocation>
+    <sslTruststorePassword>$env{TRUST_STORE_PASS}</sslTruststorePassword>
     <securityProtocol>SSL</securityProtocol>
     <name>SecureChoreoKafkaConnection</name>
   </kafkaTransport.init>
