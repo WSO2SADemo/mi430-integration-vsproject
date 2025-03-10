@@ -19,6 +19,7 @@
     </resource>
     <resource methods="GET" uri-template="/test">
         <inSequence>
+            <log category="INFO" level="full"/>
             <payloadFactory media-type="json" template-type="default">
                 <format>{"test":"success"}</format>
                 <args>
@@ -31,7 +32,7 @@
     </resource>
     <resource methods="GET" uri-template="/test-be">
         <inSequence>
-            <call>
+            <log category="INFO" level="full"  /><call>
                 <endpoint key="GetTest"/>
             </call>
             <respond/>
