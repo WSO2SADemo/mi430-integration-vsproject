@@ -8,8 +8,31 @@
         <faultSequence>
         </faultSequence>
     </resource>
-    <resource methods="POST" uri-template="/add_purchase">
+    <resource methods="POST" uri-template="/validate_and_add_purchase">
         <inSequence>
+            <sequence key="schema_validation_seq"/>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/validate_iterate_enhance_publish">
+        <inSequence>
+            <sequence key="id_schema_validation_seq"/>
+            <iterate   expression="json-eval($.orders)" id="iterateOrder"  >
+                <target sequence="id_service_chain_to_get_item_info_seq"/>
+            </iterate>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/test-be">
+        <inSequence>
+        <call >
+                <endpoint key="GetTest"/>
+            </call>
+            <respond/>
         </inSequence>
         <faultSequence>
         </faultSequence>

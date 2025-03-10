@@ -26,7 +26,7 @@ paths:
       responses:
         default:
           description: Default response
-  /add_purchase:
+  /validate_and_add_purchase:
     post:
       requestBody:
         description: Sample Payload
@@ -43,6 +43,31 @@ paths:
               xml:
                 name: payload
         required: false
+      responses:
+        default:
+          description: Default response
+  /validate_iterate_enhance_publish:
+    post:
+      requestBody:
+        description: Sample Payload
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                payload:
+                  type: object
+          application/xml:
+            schema:
+              type: object
+              xml:
+                name: payload
+        required: false
+      responses:
+        default:
+          description: Default response
+  /test-be:
+    get:
       responses:
         default:
           description: Default response
