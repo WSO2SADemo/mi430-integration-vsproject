@@ -33,8 +33,13 @@
     <resource methods="GET" uri-template="/test-be">
         <inSequence>
             <property name="BACKEND_BAL_SERVICE_URL_TEST" expression="get-property('env','BACKEND_BAL_SERVICE_URL_TEST')" scope="default"/>
+            <property name="BACKEND_BAL_TOKEN_URL" expression="get-property('env','BACKEND_BAL_TOKEN_URL')" scope="default"/>
+            
             <log category="INFO" level="full">
                 <property name="BACKEND_BAL_SERVICE_URL_TEST" expression="get-property('BACKEND_BAL_SERVICE_URL_TEST')"/>
+            </log>
+            <log category="INFO" level="full">
+                <property name="BACKEND_BAL_TOKEN_URL" expression="get-property('BACKEND_BAL_TOKEN_URL')"/>
             </log>
             <call>
                 <endpoint key="GetTest"/>
