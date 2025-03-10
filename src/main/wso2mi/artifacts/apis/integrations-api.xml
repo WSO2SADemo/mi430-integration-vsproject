@@ -32,7 +32,11 @@
     </resource>
     <resource methods="GET" uri-template="/test-be">
         <inSequence>
-            <log category="INFO" level="full"  /><call>
+            <property name="BACKEND_BAL_SERVICE_URL_TEST" expression="get-property('env','BACKEND_BAL_SERVICE_URL_TEST')" scope="default"/>
+            <log category="INFO" level="full">
+                <property name="BACKEND_BAL_SERVICE_URL_TEST" expression="get-property('BACKEND_BAL_SERVICE_URL_TEST')"/>
+            </log>
+            <call>
                 <endpoint key="GetTest"/>
             </call>
             <respond/>
