@@ -10,14 +10,12 @@
         </markForSuspension>
         <authentication>
             <oauth>
-                <passwordCredentials>
-                    <username/>
-                    <password/>
+                <clientCredentials>
                     <clientId>BACKEND_BAL_CONSUMER_KEY</clientId>
                     <clientSecret>BACKEND_BAL_CONSUMER_SECRET</clientSecret>
                     <tokenUrl>BACKEND_BAL_TOKEN_URL</tokenUrl>
                     <authMode></authMode>
-                </passwordCredentials>
+                </clientCredentials>
             </oauth>
         </authentication>
     </http>
