@@ -37,21 +37,22 @@
         </args>
     </payloadFactory>
     <log level="full"/>
-<kafkaTransport.publishMessages configKey="SecureChoreoKafkaConnection">
-    <topic >tous-purchased</topic>
-    <partitionNo >0</partitionNo>
-    <contentType ></contentType>
-    <key ></key>
-    <keySchema ></keySchema>
-    <keySchemaId ></keySchemaId>
-    <valueSchema ></valueSchema>
-    <valueSchemaId ></valueSchemaId>
-    <keySchemaSubject ></keySchemaSubject>
-    <keySchemaVersion ></keySchemaVersion>
-    <keySchemaSoftDeleted >false</keySchemaSoftDeleted>
-    <valueSchemaSubject ></valueSchemaSubject>
-    <valueSchemaVersion ></valueSchemaVersion>
-    <valueSchemaSoftDeleted >false</valueSchemaSoftDeleted>
-    <value ></value>
-</kafkaTransport.publishMessages>
+    <kafkaTransport.publishMessages configKey="SecureChoreoKafkaConnection">
+        <topic>purchased</topic>
+        <partitionNo>0</partitionNo>
+        <contentType></contentType>
+        <key></key>
+        <keySchema></keySchema>
+        <keySchemaId></keySchemaId>
+        <valueSchema></valueSchema>
+        <valueSchemaId></valueSchemaId>
+        <keySchemaSubject></keySchemaSubject>
+        <keySchemaVersion></keySchemaVersion>
+        <keySchemaSoftDeleted>false</keySchemaSoftDeleted>
+        <valueSchemaSubject></valueSchemaSubject>
+        <valueSchemaVersion></valueSchemaVersion>
+        <valueSchemaSoftDeleted>false</valueSchemaSoftDeleted>
+        <value></value>
+    </kafkaTransport.publishMessages>
+
 </sequence>
