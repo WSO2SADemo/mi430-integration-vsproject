@@ -5,7 +5,7 @@
         <parameter name="sequential">true</parameter>
         <parameter name="coordination">true</parameter>
         <parameter name="bootstrap.servers">$SYSTEM:KAFKA_ENDPOINT</parameter>
-        <parameter name="topic.name">tous-delivery</parameter>
+        <parameter name="topic.name">delivery</parameter>
         <parameter name="group.id">group1</parameter>
         <parameter name="contentType">application/json</parameter>
         <parameter name="poll.timeout">100</parameter>
