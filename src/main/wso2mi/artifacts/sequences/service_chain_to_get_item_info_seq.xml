@@ -17,14 +17,14 @@
     <payloadFactory media-type="json">
       <format>
             {
-            "id": "$1",
-            "title": "$2",
-            "price": "$3",
-            "ItemsOrdered": "$4",
-            "department": {
-            "name": "$5",
-            "location": "$6"
-            }
+                "id": "$1",
+                "title": "$2",
+                "price": "$3",
+                "ItemsOrdered": "$4",
+                "department": {
+                    "name": "$5",
+                    "location": "$6"
+                }
             }
         </format>
       <args>
