@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="service_chain_to_get_item_info_seq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
     <property name="REST_URL_POSTFIX" scope="axis2" action="remove"/>
-    <property name="uri.var.itemId" scope="default" type="STRING" expression="$url:itemId"/>
-    <property expression="json-eval($.ItemsOrdered)" name="ItemsOrdered" scope="default" type="STRING"/>
+    <property name="uri.var.itemId" scope="default" type="STRING" expression="json-eval($.order.id)"/>
+    <property expression="json-eval($.order.itemsOrdered)" name="ItemsOrdered" scope="default" type="STRING"/>
+    <log>
+        <property name="uri.var.itemId1" expression="json-eval($.order.id)"/>
+    </log>
     <call>
         <endpoint key="GetItemByItemId"/>
     </call>
@@ -36,7 +39,16 @@
             <arg evaluator="json" expression="$.location"/>
         </args>
     </payloadFactory>
-    <log level="full"/>
+    <property name="KAFKA_ENDPOINT" scope="default" type="STRING" expression="get-property('env', 'KAFKA_ENDPOINT')" action="set"/>
+    <property name="KEY_PASS" scope="default" type="STRING" expression="get-property('env', 'KEY_PASS')" action="set"/>
+    <property name="KEY_STORE_PATH" scope="default" type="STRING" expression="get-property('env', 'KEY_STORE_PATH')" action="set"/>
+    <property name="KEY_STORE_PASS" scope="default" type="STRING" expression="get-property('env', 'KEY_STORE_PASS')" action="set"/>
+    <property name="TRUST_STORE_PATH" scope="default" type="STRING" expression="get-property('env', 'TRUST_STORE_PATH')" action="set"/>
+    <property name="TRUST_STORE_PASS" scope="default" type="STRING" expression="get-property('env', 'TRUST_STORE_PASS')" action="set"/>
+    <log>
+        <property name="KAFKA_ENDPOINT" expression="$ctx:KAFKA_ENDPOINT"/>
+    </log>
+    <log category="INFO" level="full"/>
     <kafkaTransport.publishMessages configKey="SecureChoreoKafkaConnection">
         <topic>purchased</topic>
         <partitionNo>0</partitionNo>
@@ -54,5 +66,4 @@
         <valueSchemaSoftDeleted>false</valueSchemaSoftDeleted>
         <value></value>
     </kafkaTransport.publishMessages>
-
 </sequence>

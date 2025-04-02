@@ -14,7 +14,7 @@
                     <clientId>$SYSTEM:BACKEND_BAL_CONSUMER_KEY</clientId>
                     <clientSecret>$SYSTEM:BACKEND_BAL_CONSUMER_SECRET</clientSecret>
                     <tokenUrl>$SYSTEM:BACKEND_BAL_TOKEN_URL</tokenUrl>
-                    <authMode>Header</authMode>
+                    <authMode></authMode>
                 </clientCredentials>
             </oauth>
         </authentication>
